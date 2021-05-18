@@ -1,0 +1,164 @@
+ /*Crear un proyecto de consola para ingresar los datos de las ventas realizadasen la semana por vendedores 
+             de  un  comercio,  los  datos  a  ingresar  son  los  siguientes: 
+                        
+                        nro.De vendedor,  
+                        día  de  la  venta  (lunes,  martes,etc.), 
+                        importe de la venta realizada, 
+            
+            existen 3vendedores. El dueño del comercio desea saber, cuál de los vendedores realizo más ventas en la semana,
+            y en quédía se realizó la venta de mayor importe.
+            Dar una opción de salida (Salir con “S”, o con cero).
+            Informar todos los resultados solicitados, por pantalla.Ejemplo de salida por pantalla:
+                        
+                        Vendedor con mayor cantidad de ventas: XXXX.
+                        Cantidad de ventas: 50.
+                        ------------------------------------------------------------------
+                        Nro de vendedor que realizo la vta mayor: 6
+                        Días de mayorventa: miércoles.
+                        Importe de la venta mayor: 550
+            */
+            //Strings
+            string salida,diaVenta,vendedorMasVentas,vendedor1,vendedor2,vendedor3, diaMasVentas;
+            salida = "";
+            vendedor1 = "Pablo";
+            vendedor2 = "Juan";
+            vendedor3 = "Laura";
+            vendedorMasVentas = "";
+            diaMasVentas = "";
+            //interger
+            int numVendedor,ventas1,ventas2,ventas3,totalVentas,cantidadMayorVentas, numVendedorMasVentas, ventasLunes, ventasMartes, ventasMiercoles, ventasJueves, ventasViernes, ventasSabado, ventasDomingo;
+            numVendedor = 0;
+            ventas1 = 0;
+            ventas2 = 0;
+            ventas3 = 0;
+            totalVentas = 0;
+            cantidadMayorVentas = 0;
+            numVendedorMasVentas = 0;
+            ventasLunes = 0;
+            ventasMartes = 0;
+            ventasMiercoles = 0;
+            ventasJueves = 0;
+            ventasViernes = 0;
+            ventasSabado = 0;
+            ventasDomingo = 0;
+            //Float
+            float montoVenta,montoMayor;
+            montoVenta = 0;
+            montoMayor = float.MinValue;
+            Console.WriteLine("Resumen semanal de ventas");
+
+            do
+            {
+                //Ingreso de Vendedores
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Seleccione el numero de vendedor \n  1 - Pablo\n  2 - Juan\n  3 - Laura");
+                numVendedor = int.Parse(Console.ReadLine());
+                //ingreso dia de la venta
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("Dia que se cargo la venta \n(lunes,martes,miercoles,jueves,viernes,sabado,domingo");
+                diaVenta = Console.ReadLine();
+                //Ingreso monto de la venta
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("ingrese el IMPORTE de la venta");
+                montoVenta = float.Parse(Console.ReadLine());
+                //vendedor de mas ventas 
+                switch (numVendedor)
+                    {
+                    case 1:
+                        ventas1 = ventas1 +1;                        
+                        break;
+                    case 2:
+                        ventas2 = ventas2 + 1;                       
+                        break;
+                    case 3:
+                        ventas3 = ventas3 +1;                       
+                        break;
+                    default: Console.WriteLine("El Vendedor elegido no es correcto, Recuerde colocoar el numero correspondeite \n  1 - Pablo\n  2 - Juan\n  3 - Laura");
+                        break;
+                    }
+                //Monto de la venta mayor 
+                if (montoVenta > montoMayor)
+                { montoMayor = montoVenta; }
+                // cantidad de ventas por dia 
+                switch (diaVenta)
+                {
+                    case "lunes":
+                        ventasLunes = ventasLunes + 1;
+                        break;
+                    case "martes":
+                        ventasMartes = ventasMartes + 1;
+                        break;
+                    case "miercoles":
+                        ventasMiercoles = ventasMiercoles + 1;
+                        break;
+                    case "jueves":
+                        ventasJueves = ventasJueves + 1;
+                        break;
+                    case "viernes":
+                        ventasViernes = ventasViernes + 1;
+                        break;
+                    case "sabado":
+                        ventasSabado = ventasSabado + 1;
+                        break;
+                    case "domingo":
+                        ventasDomingo = ventasDomingo + 1;
+                        break;
+                    default:
+                        Console.WriteLine("El valor ingresado no es un dia de la semana, recuerde no usar mayusculas");
+                        break;
+                }
+                //Salida 
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Pasa continuar precione ENTER, para Salir porecione S");
+                salida = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+            } while (salida != "s");
+            //Total de ventas 
+            totalVentas = ventas1 + ventas2 + ventas3;
+            //Mejor vendedor 
+            if (ventas1 > ventas2 && ventas1 > ventas3)
+            { 
+                vendedorMasVentas = vendedor1;
+                cantidadMayorVentas = ventas1;
+                numVendedorMasVentas = 1;
+            }
+            if (ventas2 > ventas1 && ventas2 > ventas3)
+            {
+                vendedorMasVentas = vendedor2;
+                cantidadMayorVentas = ventas2;
+                numVendedorMasVentas = 2;
+            }
+            if (ventas3 > ventas1 && ventas3 > ventas2)
+            {
+                vendedorMasVentas = vendedor3;
+                cantidadMayorVentas = ventas3;
+                numVendedorMasVentas = 3;
+            }
+            if (ventasLunes > ventasMartes && ventasLunes > ventasMiercoles && ventasLunes > ventasJueves && ventasLunes > ventasViernes && ventasLunes > ventasSabado && ventasLunes > ventasDomingo)
+            { diaMasVentas = "Lunes"; }
+            if (ventasMartes > ventasLunes && ventasMartes > ventasMiercoles && ventasMartes > ventasJueves && ventasMartes > ventasViernes && ventasMartes > ventasSabado && ventasMartes > ventasDomingo)
+            { diaMasVentas = "Martes"; }
+            if (ventasMiercoles > ventasLunes && ventasMartes < ventasMiercoles && ventasMiercoles > ventasJueves && ventasMiercoles > ventasViernes && ventasMiercoles > ventasSabado && ventasMiercoles > ventasDomingo)
+            { diaMasVentas = "Miercoles"; }
+            if (ventasJueves > ventasLunes && ventasMartes < ventasJueves && ventasMiercoles < ventasJueves && ventasJueves > ventasViernes && ventasJueves > ventasSabado && ventasJueves > ventasDomingo)
+            { diaMasVentas = "Jueves"; }
+
+            ///Ticket final 
+            ///
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine($"        Vendedor que realzo la mayor cantidad de ventas:    {vendedorMasVentas} ");
+            Console.WriteLine($"        Cantidad de ventas de {vendedorMasVentas}:  {cantidadMayorVentas}");
+            Console.WriteLine($"        Cantidad de todas las ventas de la semana:  {totalVentas}");
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine($"        Nº del vendedor que realizo mas ventas: {numVendedorMasVentas}");
+            Console.WriteLine($"        Dia de mayor cantidad de ventas:        {diaMasVentas}");
+            Console.WriteLine($"        Importe de la  mayor venta: $           {montoMayor}");
+            Console.WriteLine("-----------------------------------------------------------");
+            ///Detener Programa 
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\n Para salir del programa precion ENTER");
+            Console.ReadKey();
+

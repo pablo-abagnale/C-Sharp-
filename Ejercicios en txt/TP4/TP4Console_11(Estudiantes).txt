@@ -1,0 +1,80 @@
+ /*EJERCICIO NÚMERO 11
+              Crear un proyecto para registrar las notas de los alumnos de un curso, 
+              se deben cargar 3 notas por alumno, los datos que se ingresan son: -Nro. legajo del alumno -Nota. 
+              Dar la opción de salir en cualquier momento (Por ejemplo: “0-para Salir, 1-para continuar cargando u otra alternativa”). 
+              Se debe mostrar por pantalla la siguiente información:
+
+                             Nro. Legajo mayor promedio: 234 Mayor promedio: 9,90 
+                                   ---------------------------------------------
+                             Nro. Legajo menor promedio: 322 Menor promedio: 6,20 
+                                  ----------------------------------------------
+                             Cantidad de alumnos: 23 Promedio general del curso: 7,6
+              */
+            int legajo, i, cantidadNotas, cantidadAlumnos, legajoMayor, legajoMenor;
+            float nota1, nota2, nota3, promedioMayor, promedioMenor, promedio, promedioGeneral, totalN1, totalN2, totalN3,sumaTotalNotas;
+            legajo = 0;
+            legajoMayor = 0;
+            legajoMenor = 0;
+            i = 0;
+            totalN1 = 0;
+            totalN2 = 0;
+            totalN3 = 0;
+            cantidadNotas = 3;
+            promedioMayor = float.MinValue;
+            promedioMenor = float.MaxValue;
+            cantidadAlumnos = 0;
+            sumaTotalNotas = 0;
+            Console.WriteLine("Este programa esta pensado para registrar las notas de los alumnos del curso");
+            do
+            {
+
+                //ingreso de datos 
+                Console.WriteLine("Ingrese el legajo del alumno");
+                legajo = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la primer nota ");
+                nota1 = float.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la segunda nota ");
+                nota2 = float.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la tercera nota ");
+                nota3 = float.Parse(Console.ReadLine());
+                //Notas, promedio general y cantidad de almnos
+                cantidadAlumnos = cantidadAlumnos + 1;
+                totalN1 = totalN1 + nota1;
+                totalN2 = totalN2 + nota2;
+                totalN3 = totalN3 + nota3;
+                sumaTotalNotas = totalN1 + totalN2 + totalN3;
+                promedioGeneral = sumaTotalNotas / (cantidadNotas * cantidadAlumnos);
+                //calculo de promedio
+                promedio = (nota1 + nota2 + nota3) / cantidadNotas;
+                //mayor y menor 
+                if (promedio > promedioMayor)
+                {
+                    promedioMayor = promedio;
+                    legajoMayor = legajo;
+                }
+                if (promedio < promedioMenor)
+                {
+                    promedioMenor = promedio;
+                    legajoMenor = legajo;
+                }
+
+                //salida del bucle
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Para continuar ingrese 1 para salir 0");
+                Console.ForegroundColor = ConsoleColor.White;
+                i = int.Parse(Console.ReadLine());
+            } while (i != 0);
+
+            //resultados
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine($"        El Nro. Legajo mayor promedio: {legajoMayor} mayor promedio:{promedioMayor} ");
+            Console.WriteLine("         ----------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"        El Nro. Legajo menor promedio: {legajoMenor} menor promedio:{promedioMenor} ");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("         ----------------------------------------------------------------------------");
+            Console.WriteLine($"        Cantidad de alumnos en el curso: {cantidadAlumnos} promedio general {promedioGeneral}");
+           
+
+            Console.ReadKey();

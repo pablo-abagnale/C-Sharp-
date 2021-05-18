@@ -1,0 +1,14 @@
+ /*EJERCICIO NÚMERO 1
+             Crear un proyecto  donde utiliceuna excepción para controlar el formato de entrada de un dato, 
+            por ejemplo si me pide que yo ingrese solamente un nro.y el operador ingresacualquier otro valor menos un nro. 
+            (FormatException).*/
+            float numIngresado;
+            numIngresado = 0;
+            try
+            {
+                Console.WriteLine("Ingresa un numero");
+                numIngresado = float.Parse(Console.ReadLine());
+            }
+            catch (FormatException) { Console.WriteLine("No es un numero"); }
+
+            Console.ReadKey();

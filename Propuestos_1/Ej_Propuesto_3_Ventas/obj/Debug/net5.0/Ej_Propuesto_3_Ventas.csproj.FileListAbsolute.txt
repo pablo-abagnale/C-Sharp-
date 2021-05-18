@@ -1,0 +1,16 @@
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\bin\Debug\net5.0\Ej_Propuesto_3_Ventas.exe
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\bin\Debug\net5.0\Ej_Propuesto_3_Ventas.deps.json
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\bin\Debug\net5.0\Ej_Propuesto_3_Ventas.runtimeconfig.json
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\bin\Debug\net5.0\Ej_Propuesto_3_Ventas.runtimeconfig.dev.json
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\bin\Debug\net5.0\Ej_Propuesto_3_Ventas.dll
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\bin\Debug\net5.0\ref\Ej_Propuesto_3_Ventas.dll
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\bin\Debug\net5.0\Ej_Propuesto_3_Ventas.pdb
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.csprojAssemblyReference.cache
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.AssemblyInfoInputs.cache
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.AssemblyInfo.cs
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.dll
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\ref\Ej_Propuesto_3_Ventas.dll
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.pdb
+C:\Users\Pablo\OneDrive\Escritorio\-\002 Tecnicatura\Laboratorio I\Trabajos Practicos\Trabajos Practicos\Propuestos_1\Ej_Propuesto_3_Ventas\obj\Debug\net5.0\Ej_Propuesto_3_Ventas.genruntimeconfig.cache

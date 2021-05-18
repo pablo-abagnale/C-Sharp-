@@ -1,0 +1,104 @@
+/*3-Ingresar n cantidad de númerospor pantalla;
+            
+            informar la cantidad de números ingresados, 
+            la cantidad de pares e impares, 
+            primos y no primos,
+            el mayor y en qué orden de carga se registró y 
+            menor número ingresadotambién el orden en que se registró, 
+            y por último el promedio de todos los números ingresados.
+            
+            Brindar la opción de salir en cualquier momentodel programa.*/
+
+
+            string salida;
+            salida = "s";
+            float numIngresado,resto,numMayor,numMenor,sumaNumeros,promedio;
+            promedio = 0;
+            numIngresado = 0;
+            numMayor = float.MinValue;
+            numMenor = float.MaxValue;
+            resto = 0;
+            sumaNumeros = 0;
+            int contadorPrimo, contadorNoPrimo,i,cantidad,ordenMayor,ordenMenor,nPares,nImpares;
+            contadorPrimo = 0;
+            contadorNoPrimo = 0;
+            cantidad = 0;
+            ordenMayor = 0;
+            ordenMenor = 0;
+            nPares = 0;
+            nImpares = 0;
+
+
+            do
+            {
+                cantidad = cantidad + 1;
+                //Ingreso de datos
+                Console.WriteLine($"Ingresa un numero {cantidad}");
+                numIngresado = float.Parse(Console.ReadLine());
+                //Promedio
+                sumaNumeros = sumaNumeros + numIngresado;
+                promedio = sumaNumeros / cantidad;
+                //Numero mayor y menor 
+                if (numIngresado > numMayor)
+                { 
+                    numMayor = numIngresado;
+                    ordenMayor = cantidad  ;
+                }
+                if (numIngresado < numMenor)
+                { 
+                    numMenor = numIngresado;
+                    ordenMenor = cantidad ;
+                }
+                //Numeros primos 
+                if (numIngresado > 1)
+                {
+                    for (i = 1; i <= numIngresado; i++)
+                    {
+                        if (numIngresado % i == 0)
+                        {
+                            resto ++;
+                        }
+                    }
+                    if (resto == 2)
+                    {
+                        contadorPrimo ++;
+                    }
+                    if (resto != 2)
+                    {
+                        contadorNoPrimo ++;
+                    }                   
+                }
+                //Pares e Impares 
+                if (numIngresado % 2 == 0)
+                { nPares = nPares + 1; }
+                else 
+                { nImpares = nImpares + 1; }
+
+                
+
+                //salida del bucle
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("¿Desea cargar otro alumno? (s/n), Puede usar ENTER para continuar ");                
+                salida = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+            } while (salida != "n");
+            //Resultados 
+
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("_____________________________________________________________________________\n");
+            Console.WriteLine($"La cantida de numeros ingresados es {cantidad}");
+            Console.WriteLine($"De los numeros ingresados {nPares} Son PARES y {nImpares} Son IMPARES");
+            Console.WriteLine($"De los numros ingresados {contadorPrimo} Son PRIMOS y {contadorNoPrimo} NO son PRIMOS");
+            Console.WriteLine($"El MAYOR es {numMayor} cargado en la posición {ordenMayor} y el MENOR es {numMenor} cargado en la posición {ordenMenor}");
+            Console.WriteLine($"El PROMEDIO de los numeros ingresados es {promedio}");
+            Console.WriteLine("_____________________________________________________________________________\n");
+
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+
+            //Salida del programa 
+            Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\n\n Para detener el programa presione ENTER");
+                Console.ReadKey();

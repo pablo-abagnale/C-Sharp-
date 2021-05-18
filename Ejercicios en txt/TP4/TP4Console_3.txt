@@ -1,0 +1,40 @@
+/*EJERCICIO NÚMERO 3 
+	Agregar un nuevo proyecto llamado “tp4Ejercicio3”, realizar un programa simule una mini-calculadora, que 
+	contemple las 4 operaciones básicas (sumar, restar, multiplicar, dividir), utilice la estructura “switch”, 
+	luego mostrar el resultado de la operación por pantalla.*/
+
+float num1, num2, resultado;
+            
+int operacion;
+
+            Console.WriteLine("Calculadora basica");
+            Console.WriteLine("Que operación decea realizar \n1-Suma\n2-Resta\n3-Multiplicación\n4-Dividir");
+            operacion = int.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese el primer numero");
+            num1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese el segundo numero");
+            num2 = float.Parse(Console.ReadLine());
+           
+ switch(operacion)
+            {
+                case 1:
+                    resultado = num1 + num2;
+                    Console.WriteLine($"{num1} + {num2} = {resultado} ");
+                    break;
+                case 2:
+                    resultado = num1 - num2;
+                    Console.WriteLine($"{num1} - {num2} = {resultado} ");
+                    break;
+                case 3:
+                    resultado = num1 * num2;
+                    Console.WriteLine($"{num1} * {num2} = {resultado} ");
+                    break;
+                case 4:
+                    resultado = num1 / num2;
+                    Console.WriteLine($"{num1} / {num2} = {resultado} ");
+                    break;
+                default:
+                    Console.WriteLine ("no es una opción valida");
+                    break;
+            }
+ Console.ReadKey();

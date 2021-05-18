@@ -1,0 +1,55 @@
+  /*3-Crearun proyecto donde se ingresen números y se debe determinar la cantidad de números ingresados, 
+             el  número  mayor  ingresado  y  cuál  fue  su  orden  de  carga,  la  cantidad  de  números  pares  e  impares 
+             ingresados, informar todos estos resultados por pantalla.*/
+
+            string salida;
+            salida = "s";
+            int orden,i;
+            orden = 0;
+            i = 0;
+            float numeroIngresado,numMayor,totalPar,totalImpar;
+            numMayor = float.MinValue;           
+            totalPar = 0;
+            totalImpar = 0;
+            numeroIngresado = 0;
+            do
+            {
+                i = i + 1;
+                Console.WriteLine($"Ingrea un numero {i}");
+                numeroIngresado = float.Parse(Console.ReadLine());
+                //Numero mayor 
+                if ( numeroIngresado > numMayor)
+                {
+                    numMayor = numeroIngresado;
+                    orden = i;
+                }
+                //Par o impar                
+                if (numeroIngresado % 2 == 0 )
+                {
+                    totalPar = totalPar + 1;
+                }
+                else 
+                {
+                    totalImpar = totalImpar + 1;
+                }
+                //Salida 
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Desea seguir cargando? (s/n)");                
+                salida = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+            } while (salida != "n");
+
+            //Resultados
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("__________________________________________________________________\n");
+            Console.WriteLine($"    La cantidad de numeros ingresados es: {i} ");
+            Console.WriteLine($"    El numero mayor cargado es el {numMayor} cargado en la posición {orden}");
+            Console.WriteLine($"    Cantidad de numeros PARES ingresados: {totalPar}");
+            Console.WriteLine($"    Cantidad de IMPARES es: {totalImpar}");
+            Console.WriteLine("__________________________________________________________________");
+            //Detener programa 
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\nPara salir del programa precione ENTER");
+            Console.ReadKey();

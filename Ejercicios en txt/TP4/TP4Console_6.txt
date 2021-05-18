@@ -1,0 +1,32 @@
+ /*EJERCICIO NÚMERO 6
+	Realizar la suma de los 15 primeros números y obtener el promedio, utilice un estructura FOR, 
+	mostrar la suma obtenida por pantalla.*/
+            int i,vuelta,vueltaSuma;
+            float num,numSuma,promedio;
+            string salida;
+            num = 0;
+            numSuma = 0;
+            salida = "";
+            vuelta = 0;
+            vueltaSuma = 15;
+            Console.WriteLine("Vamos a sumar los primeros 15 numeros que ingrese ");
+            while (salida != "0")
+            {
+                vuelta = vuelta + 1;
+                Console.WriteLine($"Ingrese el numero {vuelta}");
+                num = int.Parse(Console.ReadLine());
+
+              
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("para salir precione 0, enter para continuar");
+                Console.ForegroundColor = ConsoleColor.White;
+                salida = Console.ReadLine();
+
+            }
+            for (i = 0; i <= vueltaSuma; i++)
+            {
+                numSuma = numSuma + num;
+            }
+            promedio = numSuma / vueltaSuma;
+            Console.WriteLine($"La suma de los primeros 15 numeros ingresados es {numSuma} \nEl promedio de los 15 numeros es {promedio}");
+            

@@ -1,0 +1,36 @@
+  /*EJERCICIO NÚMERO 8
+                    Ingresar un número determinado por consola, informar por pantalla si es un número primo, informar por
+                    pantalla (Un número primo es aquel que es divisible por sí mismo y por la unidad, por ejemplo: 7, 11, 13, 17,
+                    etc.).*/
+            float numIngresado, divisor;
+            int i;
+            i = 1;
+            numIngresado = 0;
+            Console.WriteLine("Este programa te dice si el numero ingresado es primo \n Ingrese un numero:");
+            numIngresado = float.Parse(Console.ReadLine());
+
+            while (numIngresado != 0)
+            {
+
+                if (numIngresado <= 0)
+                {
+                    Console.WriteLine("El numero no es primo");
+                }
+                else 
+                {
+                    if (numIngresado % 2 != 0)
+                    {
+                        Console.WriteLine("El numero es Primo");
+                    }
+                    else
+                    {
+                        Console.WriteLine("El numero no es Primo");
+                    }
+
+                }
+                
+
+                Console.WriteLine("Precione 0 para salir");
+                numIngresado = float.Parse(Console.ReadLine());
+            }
+            Console.ReadKey();

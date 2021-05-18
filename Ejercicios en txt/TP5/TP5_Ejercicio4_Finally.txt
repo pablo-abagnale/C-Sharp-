@@ -1,0 +1,21 @@
+*EJERCICIO NÚMERO 4
+            Crear un proyecto  donde ingrese 2 números e intente contemplar todas las excepciones  y
+            agregar una excepción general, y utilice tambiénla instrucción finally.*/
+
+            int num1,num2,resultado;
+            num1 = 0;
+            num2 = 0;
+            resultado = 0;
+            try
+            {
+                Console.WriteLine("Divide dos numeros\ningresa el primer numero:");
+                num1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el segundo numero");
+                num2 = int.Parse(Console.ReadLine());
+                resultado =  num1 / num2;
+                Console.WriteLine($"{num1}/{num2}={resultado}");
+            }
+            catch(DivideByZeroException ex) { Console.WriteLine( ex.Message); }
+            catch(OverflowException ex) { Console.WriteLine(ex.Message); }
+            finally { Console.WriteLine("Preciona una tecla para salir"); }
+            Console.ReadKey();

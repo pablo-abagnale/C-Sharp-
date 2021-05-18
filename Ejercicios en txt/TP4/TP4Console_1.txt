@@ -1,0 +1,24 @@
+/*EJERCICIO NÚMERO 1a. 
+
+En un proyecto de escenario de consolallamado “tp4Console_1 ”ingresar un valor enteroy utilizando estructuras IF (decisión) 
+poder decidir si el número es par o impar, mostrar el mensaje por laconsola.b. Cree un proyecto de consola “tp4Consola_2”, ingresar 5 números enteros por pantalla, 
+si el numero ingresado  es menor que 5 multiplicarlo por 3, caso contrario sumarle 10, se pide mostrar por pantalla el resultado obtenido. 
+c.Cree un proyecto de consola “tp4Console_3”, ingresar 2 valores y realizar la suma, determinar si la suma de ambos da por resultado, “par”, o “ “impar”,
+ mostrar por pantalla ambos resultados.*/	
+
+
+
+
+int num;
+            num = 0;
+            Console.WriteLine("Este programa es para determinar si un numero es par o impar \n Ingrese el un numero");
+            num = int.Parse(Console.ReadLine());
+            if (num % 2 == 0)
+            {
+                Console.WriteLine($"El numero {num} es par");
+             }
+            else
+            {
+                Console.WriteLine($"El numero {num} es impar");
+            }    
+            Console.ReadKey();

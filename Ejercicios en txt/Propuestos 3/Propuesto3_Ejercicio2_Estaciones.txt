@@ -1,0 +1,56 @@
+ /*2-Crear un proyecto para determinar a qué estación del año pertenece esa fecha que se ingresa por pantalla: 
+             se debe ingresar 
+            -Día
+            -Mes
+            
+            Mostrar el por pantalla algo similar al siguiente mensaje: 
+            
+            La fecha 20/06 pertenece a la estación “invierno”.*/
+            string salida,estacion;
+            salida = "s";
+            estacion = "";
+            int dia, mes;
+            dia = 0;
+            mes = 0;
+            Console.WriteLine("¿Que estación es? ");
+            do
+            {
+                Console.WriteLine("Ingresa el numero del dia (1 a 31 dependiendo el mes) ");
+                dia = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el numero de mes \n 1-Enero, 2-Febrero, 3-Marzo, 4-Abril, 5-Mayo, 6-Junio, 7-Julio, 8-Agosto, 9-Septiembre, 10-Octubre, 11-Noviembre, 12-Diciembre");
+                mes = int.Parse(Console.ReadLine());
+                //Validación de dias y meses
+               if (dia < 1 || dia >= 32)
+                { Console.WriteLine($"El valor {dia} ingresado no es un día del mes"); }
+                if (mes < 1 || mes >= 13)
+                { Console.WriteLine($"El valor {mes} no es un mes del año intente con: \n 1-Enero, 2-Febrero, 3-Marzo, 4-Abril, 5-Mayo, 6-Junio, 7-Julio, 8-Agosto, 9-Septiembre, 10-Octubre, 11-Noviembre, 12-Diciembre "); }
+                //Verano
+                if (dia >= 21 && mes > 11 || mes < 3)
+                {estacion = "Verano";}
+                //Otoño
+                if (dia >= 21 && mes >=3 && mes < 6)
+                { estacion = "Otoño"; }
+                //Invierno 
+                if (dia >= 21 && mes >= 7 && mes < 9)
+                { estacion = "Invierno"; }
+                if (dia >= 21 && mes >= 9 && mes < 12)
+                { estacion = "Primavera"; }
+                // Resultado
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine($"\n\nLa fecha {dia}/{mes} pertence al estación de {estacion}");
+                //salida del bucle
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n\n¿Desea cargar otro alumno? (s/n), Puede usar ENTER para continuar ");
+                Console.ForegroundColor = ConsoleColor.White;
+                salida = Console.ReadLine();
+            } while (salida != "n");
+
+            
+
+            //Detener programa 
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\n Para detener el programa precione ENTER");
+            Console.ReadKey();

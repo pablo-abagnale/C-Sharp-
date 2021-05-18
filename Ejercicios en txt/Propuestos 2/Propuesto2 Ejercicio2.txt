@@ -1,0 +1,37 @@
+ /*Se desea armar 3 grupos de 5 personas de distintas edades y sexo para un grupo de investigación, 
+             los datos que se ingresan por pantalla para cada grupo son:
+
+            -Edad
+            -Sexo (M/F)
+
+            La información que se solicita de los 3 grupos es la siguiente:
+
+            Nombre del Grupo: Los genios
+            Edad del mayor del grupo: 35años
+            Sexo del mayor del grupo: M
+            Orden de carga: 2º
+            Edad del menor del grupo: 20 años
+            Sexo del menor del grupo: F
+            Orden de Carga: 4
+            
+             Al final mostrar un resumen con la siguiente información:
+
+            Nombre del grupo de mayor edad: Los inventores
+            Edad del mayor del Grupo: 36año
+            */
+            int numPersonas,i,edad;
+            edad = 0;
+            string sexo;
+            sexo = "";
+            Console.WriteLine("Programa para la formación de grupos");
+            Console.WriteLine("Cuantas personas se van a ingresar");
+            numPersonas = int.Parse(Console.ReadLine());
+            for (i = 0; i <= numPersonas; i++)
+            {
+                //Edad de los participantes
+                Console.WriteLine("Ingrese la edad del Participante");
+                edad = int.Parse(Console.ReadLine());
+                //Sexo del Participante
+                Console.WriteLine("Ingrese el sexo del participante \n  m - Masculino o f - Femenino");
+                sexo = Console.ReadLine();
+            }

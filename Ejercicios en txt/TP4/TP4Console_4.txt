@@ -1,0 +1,22 @@
+/*EJERCICIO NÚMERO 4
+	Agregarun nuevo proyectollamado “tp4Ejercicio4”que permitaque se le ingrese un texto cualquiera, 
+	controlarque la misma tenga más de 5caracteres de longitud, en caso contrario informar por pantalla: 
+	“La cantidad de caracteres es menor que 5”, solicitarle al usuario la cantidad de veces que desea 
+	ejecutar el programa y hacer el control respectivo.(Emplearuna estructura repetitiva para esta actividad). */
+            
+
+int vueltas,i;
+string caracteres;
+            
+	vueltas = 0;
+            Console.WriteLine("Este programa cuenta la cantidad de una palabra \ntiene que ingresar una palabra de 5 letras\n¿Cuantas veces desdea que se ejecute?");
+            vueltas = int.Parse(Console.ReadLine());
+            for (i=1;i <= vueltas; i++) 
+            {
+                Console.WriteLine("Ingrese una palabra");
+                caracteres = Console.ReadLine();
+                if (caracteres.Length < 5)
+                { Console.WriteLine($"La palabra {caracteres} tiene menos de 5 letras"); }
+            }
+            
+Console.ReadKey();

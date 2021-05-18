@@ -1,0 +1,39 @@
+/*EJERCICIO NÚMERO 2 
+Agregar un nuevoproyecto llamado “tp4Ejercicio2”, ingresarpor consolael numero de mes del añoy por mediode una estructura de decisión “switch”
+mostrar el nombre del mes ingresado, Ejemplo si ingresa el numero 5, deberá mostrar el mensaje “Usted ha ingresado el mes de Mayo”*/
+
+
+int numMes;
+            
+Console.WriteLine("Ingrese el numero de mes y el programa le devolvera el nombre del mes \n ingresa el numero de mes");
+            numMes = int.Parse(Console.ReadLine());
+            
+            switch (numMes)
+            {
+                case 1: Console.WriteLine($"El mes {numMes} es Enero");
+                    break;
+                case 2: Console.WriteLine($"El mes {numMes} es Febrero");
+                    break;
+                case 3: Console.WriteLine($"El mes {numMes} es Marzo");
+                    break;
+                case 4: Console.WriteLine($"El mes {numMes} es Abril");
+                    break;
+                case 5: Console.WriteLine($"El mes {numMes} es Mayo");
+                    break;
+                case 6: Console.WriteLine($"El mes {numMes} es Junio");
+                    break;
+                case 7: Console.WriteLine($"El mes {numMes} es Julio");
+                    break;
+                case 8: Console.WriteLine($"El mes {numMes} es Agosto");
+                    break;
+                case 9: Console.WriteLine($"El mes {numMes} es Septiembre");
+                    break;
+                case 10: Console.WriteLine($"El mes {numMes} es Octubre");
+                    break;
+                case 11: Console.WriteLine($"El mes {numMes} es Noviembre");
+                    break;
+                case 12: Console.WriteLine($"El mes {numMes} es Diciembre");
+                    break;
+                default: Console.WriteLine("No es un mes del año");
+                    Console.ReadKey();
+                    break;

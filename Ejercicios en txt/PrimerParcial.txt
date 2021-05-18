@@ -1,0 +1,158 @@
+using System;
+
+namespace Primer_Parcial
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("                          Primer parcial - Pablo Abagnale             ");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            ////
+            string salida,sexo;
+            salida =  "s";
+            int legajo, i, cantidadNotas, cantidadAlumnos, legajoMayor, legajoMenor,primerosAlumnos,notasMas6,notasMenos6,notaCondicion,cantidadHombres,CantidadMujeres;
+            float nota1, nota2, nota3, promedioMayor, promedioMenor, promedio, promedioGeneral, totalN1, totalN2, totalN3, sumaTotalNotas;
+            //CONSTANTES
+            primerosAlumnos = 5;
+            cantidadNotas = 3;
+            notaCondicion = 6;
+            promedioMayor = float.MinValue;
+            promedioMenor = float.MaxValue;
+            //VARIABLES
+            legajo = 0;
+            legajoMayor = 0;
+            legajoMenor = 0;
+            i = 0;
+            totalN1 = 0;
+            totalN2 = 0;
+            totalN3 = 0;                        
+            cantidadAlumnos = 0;
+            sumaTotalNotas = 0;
+            notasMas6 = 0;
+            notasMenos6 = 0;          
+            cantidadHombres = 0;
+            CantidadMujeres = 0;
+
+            Console.WriteLine($"Este programa esta pensado para registrar las notas de los alumnos del curso \ny evaluar el sexo,y notas mayores, menores e iguales a {notaCondicion} de los primeros {primerosAlumnos} alumnos ");
+            do
+            {
+
+                //ingreso de datos 
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("Ingrese el legajo del alumno");
+                legajo = int.Parse(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("Ingrece el sexo del alumno (f/m) ");
+                sexo = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("Ingrese la primer nota ");
+                nota1 = float.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la segunda nota ");
+                nota2 = float.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese la tercera nota ");
+                nota3 = float.Parse(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.White;
+
+                //Primeros 5 alumnos
+                i = i + 1;
+                if (i <= primerosAlumnos)
+                {
+                    //notas Mayores iguales o menores a 6
+                    if (nota1 >= notaCondicion)
+                    {
+                        notasMas6 = notasMas6 + 1;
+                    }if (nota2 >= notaCondicion)
+                    {
+                        notasMas6 = notasMas6 + 1;
+                    }if (nota3 >= notaCondicion)
+                    {
+                        notasMas6 = notasMas6 + 1;
+                    }if (nota1 <= notaCondicion)
+                    {
+                        notasMenos6 = notasMenos6 + 1;
+                    }if (nota2 <= notaCondicion)
+                    {
+                        notasMenos6 = notasMenos6 + 1;
+                    }
+                    if (nota3 <= notaCondicion)
+                    {
+                        notasMenos6 = notasMenos6 + 1;
+                    }
+                    // Cantidad de hombres y mujeres 
+                    if (sexo == "m")
+                    { cantidadHombres = cantidadHombres + 1; }
+                    if (sexo == "f")
+                    { CantidadMujeres = CantidadMujeres + 1; }
+                    
+                }
+
+                //Notas, promedio general y cantidad de almnos
+                cantidadAlumnos = cantidadAlumnos + 1;
+                totalN1 = totalN1 + nota1;
+                totalN2 = totalN2 + nota2;
+                totalN3 = totalN3 + nota3;
+                sumaTotalNotas = totalN1 + totalN2 + totalN3;
+                promedioGeneral = sumaTotalNotas / (cantidadNotas * cantidadAlumnos);
+                //calculo de promedio
+                promedio = (nota1 + nota2 + nota3) / cantidadNotas;
+                //mayor y menor 
+                if (promedio > promedioMayor)
+                {
+                    promedioMayor = promedio;
+                    legajoMayor = legajo;
+                }
+                if (promedio < promedioMenor)
+                {
+                    promedioMenor = promedio;
+                    legajoMenor = legajo;
+                }
+
+                //salida del bucle
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("¿Desea cargar otro alumno? (s/n), Puede usar ENTER para continuar ");
+                salida = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+            } while (salida != "n");
+
+            //resultados
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Para todos los alumnos");
+            Console.WriteLine($"        El Nro. Legajo mayor promedio: {legajoMayor} mayor promedio:{promedioMayor} ");
+            Console.WriteLine("         ----------------------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"        El Nro. Legajo menor promedio: {legajoMenor} menor promedio:{promedioMenor} ");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("         ----------------------------------------------------------------------------");
+            Console.WriteLine($"        Cantidad de alumnos en el curso: {cantidadAlumnos} promedio general {promedioGeneral}");
+            Console.WriteLine("\nPara todos los primeros 5 alumnos");
+            Console.WriteLine("         ----------------------------------------------------------------------------");
+            Console.WriteLine($"        Cantidad de notas igual o mayor a 6: {notasMas6} notas                      ");
+            Console.WriteLine("         ----------------------------------------------------------------------------");
+            Console.WriteLine($"        Cantidad de notas igual o menor a 6: {notasMenos6} notas                    ");
+            Console.WriteLine("         ----------------------------------------------------------------------------");
+            Console.WriteLine($"        Cantidad de Hombres: {cantidadHombres}                                      ");
+            Console.WriteLine($"        Cantidad de Mujeres: {CantidadMujeres}                                      ");
+
+
+            //Cierre de la consola 
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("\n\n                      Primer parcial - Pablo Abagnale             ");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\n Para cerrar la consola presione ENTER");
+            Console.ReadKey();
+
+
+
+
+        }
+    }
+}

@@ -1,0 +1,38 @@
+/*EJERCICIO NÚMERO 5
+	            Ingresar una cantidad deseada de números determinar, cual es el menor de todos los ingresados y sacar 
+	            el promedio de los números ingresado excepto el menor,  informar por pantalla esta información, utilice 
+	            una estructura repetitiva (While). */
+
+            int vueltas, i,vPromedio;
+            float num, numMenor, promedio,numSuma;
+
+            numMenor = int.MaxValue;
+            vueltas = 0;
+            num = 0;
+            i = 1;
+            promedio = 0;
+            numSuma = 0;
+
+            Console.WriteLine("Este progroma le va a calcualr el promedio de la cantidad de numeros que decee menos el menor y cual es el menor");
+            Console.WriteLine("¿Cuantos numeros decea ingresar");
+            vueltas = int.Parse(Console.ReadLine());
+
+            while (i <= vueltas)
+            {
+                Console.WriteLine($"ingrese el numero {i}");
+                num = float.Parse(Console.ReadLine());
+             
+                if (num < numMenor)
+                { numMenor = num ; }
+               numSuma = numSuma + num; 
+                i++;
+            }
+            vPromedio = vueltas - 1;
+            promedio = (numSuma - numMenor) / vPromedio; 
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine($"El numero menor es {numMenor} el promedio de los demas es {promedio}");
+                
+
+            Console.ReadKey();

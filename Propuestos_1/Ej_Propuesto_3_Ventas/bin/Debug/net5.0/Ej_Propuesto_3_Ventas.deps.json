@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Ej_Propuesto_3_Ventas/1.0.0": {
+        "runtime": {
+          "Ej_Propuesto_3_Ventas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ej_Propuesto_3_Ventas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

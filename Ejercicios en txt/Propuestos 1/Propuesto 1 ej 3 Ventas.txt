@@ -1,0 +1,124 @@
+int ventasLunes, ventasMartes, ventasMiercoles, ventasJueves, ventasViernes, ventasSabado, ventasDomingo, totalVentas, vendedor, vendedor1, vendedor2;
+            string diaSmna, option, mejorVendedor,diaMasVentas;
+            float monto, montoMayor;
+            monto = 0;
+            montoMayor = float.MinValue;
+            option = "";
+            ventasLunes = 0;
+            ventasMartes = 0;
+            ventasMiercoles = 0;
+            ventasJueves = 0;
+            ventasViernes = 0;
+            ventasSabado = 0;
+            ventasDomingo = 0;
+            totalVentas = 0;
+            vendedor = 0;
+            vendedor1 = 0;
+            vendedor2 = 0;
+            Console.WriteLine("Calculadora de ventas semanales");
+            do
+            {
+                //Vendedor
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Ingrese un vendedor \n 1 - Pablo\n 2 - Juan");
+                vendedor = int.Parse(Console.ReadLine());
+                switch (vendedor)
+                {
+                    case 1:
+                        vendedor1 = vendedor1 + 1;
+                        break;
+                    case 2:
+                        vendedor2 = vendedor2 + 1;
+                        break;
+                    default:
+                        Console.WriteLine("El vendendor selecciónado no existe");
+                        break;
+                }
+
+                //Dia de la semana 
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("Ingrese el dia de la venta \n lunes, martes, miercoles, jueves, viernes, sabado, domingo");
+                diaSmna = Console.ReadLine();
+                switch (diaSmna)
+                {
+                    case "lunes":
+                        ventasLunes = ventasLunes + 1;
+                        break;
+                    case "martes":
+                        ventasMartes = ventasMartes + 1;
+                        break;
+                    case "miercoles":
+                        ventasMiercoles = ventasMiercoles + 1;
+                        break;
+                    case "jueves":
+                        ventasJueves = ventasJueves + 1;
+                        break;
+                    case "viernes":
+                        ventasViernes = ventasViernes + 1;
+                        break;
+                    case "sabado":
+                        ventasSabado = ventasSabado + 1;
+                        break;
+                    case "domingo":
+                        ventasDomingo = ventasDomingo + 1;
+                        break;
+                    default:
+                        Console.WriteLine("El valor ingresado no es un dia de la semana, recuerde no usar mayusculas");
+                        break;
+                }
+
+                // Montos de la venta 
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Ingrese el monto de la venta");
+                monto = int.Parse(Console.ReadLine());
+                if (monto > montoMayor)
+                {
+                    montoMayor = monto;
+                }
+
+                //Opcion de salida
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Precione ENTER para seguir cargando o 0 para Salir");
+                option = Console.ReadLine();
+
+            } while (option != "0");
+
+            //mejor vendedor 
+            mejorVendedor = "";
+            if ( vendedor1 == vendedor2)
+            { mejorVendedor = "ninguno, ambos realizaron la misma cantidad de ventas"; }
+            if (vendedor1 > vendedor2)
+            { mejorVendedor = "Pablo el vendedor 1"; }
+            if (vendedor2 > vendedor1)
+            { mejorVendedor = "Juan el vendedor 2"; }
+
+            totalVentas = ventasLunes + ventasMartes + ventasMiercoles + ventasJueves + ventasViernes + ventasSabado + ventasDomingo;
+            diaMasVentas = "";
+            if ( ventasLunes > ventasMartes && ventasLunes > ventasMiercoles && ventasLunes > ventasJueves && ventasLunes > ventasViernes && ventasLunes > ventasSabado && ventasLunes > ventasDomingo)
+            { diaMasVentas = "Lunes"; }
+            if (ventasMartes > ventasLunes && ventasMartes > ventasMiercoles && ventasMartes > ventasJueves && ventasMartes > ventasViernes && ventasMartes > ventasSabado && ventasMartes > ventasDomingo)
+            { diaMasVentas = "Martes"; }
+            if (ventasMiercoles > ventasLunes && ventasMartes < ventasMiercoles && ventasMiercoles > ventasJueves && ventasMiercoles > ventasViernes && ventasMiercoles > ventasSabado && ventasMiercoles > ventasDomingo)
+            { diaMasVentas = "Miercoles"; }
+            if (ventasJueves > ventasLunes && ventasMartes < ventasJueves && ventasMiercoles < ventasJueves && ventasJueves > ventasViernes && ventasJueves > ventasSabado && ventasJueves > ventasDomingo)
+            { diaMasVentas = "Jueves"; }
+
+
+            //Salida del ticket 
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine($"Nroº de ventas vendor : Pablo vendedor 1 \n Cantidad de ventas: {vendedor1}");
+            Console.WriteLine($"Nroº de ventas vendor : Juan vendedor 2 \n Cantidad de ventas: {vendedor2}");
+            Console.WriteLine($"Ël vendedor que realizo mas ventas es: {mejorVendedor}");
+            Console.WriteLine("----------------------------------------");           
+            Console.WriteLine($"Total de ventas de la semana {totalVentas}");
+            Console.WriteLine($"Importe de la venta mayor: ${montoMayor}");
+            Console.WriteLine($"Dia de la semana de mas ventas: {diaMasVentas}");
+            Console.WriteLine("----------------------------------------");
+            //Cierre programa
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\n Precione un tecla para salir del programa");
+            Console.ReadKey();

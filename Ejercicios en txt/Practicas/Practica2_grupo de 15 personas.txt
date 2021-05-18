@@ -1,0 +1,97 @@
+string nombre,sexo,nombreMayor,nombreMenor;
+            nombreMayor = "";
+            nombreMenor = "";
+            int i,iPrimo, cantidadPersonas,edad,edadMayor,edadMenor,sumaEdad,promedio,menoresDe20,mayoresYDe20,edadCorte,cantidadMasc,cantidadFem, cantidadResto,cantidadPrimo;
+            cantidadPersonas = 4;
+            edadMayor = int.MinValue;
+            edadMenor = int.MaxValue;
+            sumaEdad = 0;
+            promedio = 0;
+            menoresDe20 = 0;
+            mayoresYDe20 = 0;
+            edadCorte = 20;
+            cantidadMasc = 0;
+            cantidadFem = 0;
+            cantidadResto = 0;
+            cantidadPrimo = 0;
+            Console.WriteLine("Registro de personas");
+
+            for (i = 0; i <= cantidadPersonas; i++)
+            {
+                //ingreso de datos 
+                Console.WriteLine("Ingrese el nombre del participante");
+                nombre = Console.ReadLine();
+                Console.WriteLine("Ingres la edad del participante");
+                edad = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese el sexo del participante (f/m)");
+                sexo = Console.ReadLine();
+                //sexo
+                if (sexo == "m")
+                {
+                    cantidadMasc = cantidadMasc + 1;
+                }
+                if (sexo == "f")
+                {
+                    cantidadFem = cantidadFem + 1;
+                }
+                //Mayores y menores de 20 
+                if (edad < edadCorte)
+                {
+                    menoresDe20 = menoresDe20 + 1;
+                }
+                else
+                {
+                    mayoresYDe20 = mayoresYDe20 + 1;
+                }
+                //promedio
+                sumaEdad = sumaEdad + edad;
+                promedio = sumaEdad / cantidadPersonas;
+                //Participante Mayor 
+                if (edad > edadMayor)
+                {
+                    edadMayor = edad;
+                    nombreMayor = nombre;
+                }
+                //Participante menor
+                if (edad < edadMenor)
+                {
+                    edadMenor = edad;
+                    nombreMenor = nombre;
+                }
+                //edades primas 
+                if (edad > 1)
+                {
+                    for (iPrimo = 1; iPrimo <= edad; iPrimo++)
+                    {
+                        if (edad % iPrimo == 0)
+                        {
+                            cantidadResto++;
+                        }
+                    }
+                    if (cantidadResto == 2)
+                    {
+                        cantidadPrimo = cantidadPrimo + 1;
+                    }
+
+                }
+            }
+            Console.WriteLine($"Edad del participante mayor {edadMayor} años");
+            Console.WriteLine($"Nombre del participante mayor {nombreMayor}");
+            Console.WriteLine($"--------------------------------------------");
+            Console.WriteLine($"Edad del participante menor {edadMenor} años");
+            Console.WriteLine($"Nombre del participante menor {nombreMenor}");
+            Console.WriteLine($"--------------------------------------------");
+            Console.WriteLine($"Promedio general de edades de los participantes {promedio} años");
+            Console.WriteLine($"Cantidad de participantes menores de 20 años: {menoresDe20}");
+            Console.WriteLine($"Cantidad de participantes de o mayores de 20 años {mayoresYDe20}");
+            Console.WriteLine($"--------------------------------------");
+            Console.WriteLine($"Cantidad de participantes hombres: {cantidadFem} ");
+            Console.WriteLine($"Cantidade de participantes mujeres: {cantidadMasc}");
+            Console.WriteLine($"Cantida de edades primas de los participantes {cantidadPrimo}");
+            Console.WriteLine($"-------------------------------------------------");
+
+            //Cierre de consola
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\n Para detener el programa presione ENTER");
+            Console.ReadKey();

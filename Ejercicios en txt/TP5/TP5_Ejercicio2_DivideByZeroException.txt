@@ -1,0 +1,20 @@
+ /*EJERCICIO NÚMERO 2
+            Crear un proyecto  donde utilice una excepción para controlar la división de 2 númerosque se ingresan por pantalla.
+            (DivideByZeroException).*/
+            int num1, num2, resultado;
+            num1 = 0;
+            num2 = 0;
+            resultado = 0;
+            try
+            {
+                Console.WriteLine("División de dos numeros \nIngrese el primer numero");
+                num1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingresa el segundo numero");
+                num2 = int.Parse(Console.ReadLine());
+                resultado = num1 / num2;
+                Console.WriteLine($"{num1}/{num1} = {resultado} ");
+            }
+            catch (OverflowException) { Console.WriteLine("Estas dividiendo por 0"); }
+            catch (DivideByZeroException) { Console.WriteLine("Estas dividiendo por 0"); }
+
+            Console.ReadKey();

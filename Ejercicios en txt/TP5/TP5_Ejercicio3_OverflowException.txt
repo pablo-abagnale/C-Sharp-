@@ -1,0 +1,13 @@
+/*EJERCICIO NÚMERO 3
+            Crear un proyecto  donde utilice una excepción para controlar el ingreso de un numero, 
+            donde el valor que se ingresa es mayor el de su rango. (OverflowException)*/
+            byte numIngresado;
+            numIngresado = 0;
+            try
+            {
+                Console.WriteLine("Ingresa un numero de 0 a 255");
+                numIngresado = byte.Parse(Console.ReadLine());
+            }
+            catch (OverflowException) { Console.WriteLine("El numero ingresado es mayor que el solicitado"); }
+
+            Console.ReadKey();

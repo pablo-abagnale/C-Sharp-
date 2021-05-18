@@ -1,0 +1,26 @@
+/*EJERCICIO NÚMERO 7
+            Obtener el factorial de un numero utilizando estructura FOR, el factorial de un numero se obtiene de la siguiente
+            forma; por ejemplo el factorial de 4 es 4x3x2x1, el factorial de 6 es 6x5x4x3x2x1, y asícon cualquier numero que 
+            se ingrese por la pantalla. Mostrarpor pantalla el númeroy su correspondiente factorial.*/
+
+            float num,factorial,factor;
+            int i;
+            factorial = 1;
+            factor = 1;
+            Console.WriteLine("Calculo de factorial \n Ingresa un numero");
+            num = float.Parse(Console.ReadLine());
+
+            if (num <= 0)
+            {
+                Console.WriteLine("Los numeros neutros o negativos no tienen factorial");
+            }
+            else 
+            {
+                for (i = 1; i <= num; i++)
+                {
+                    factorial = factorial * i;
+
+                    
+                }
+                Console.WriteLine($"El factorial de {num} es {factorial} \n\n Precione enter para salir");
+                Console.ReadKey();

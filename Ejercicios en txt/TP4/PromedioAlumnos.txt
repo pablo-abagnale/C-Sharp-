@@ -1,0 +1,76 @@
+ string nombreAlumno, nombrePromedioMayor=string.Empty, nombrePromedioMenor=string.Empty;
+            int cantidadAlumno=0, notaAlumno, sumaNota = 0;
+            // declaramos como float porque van a tener valores decimales
+            float promedioMenor = float.MaxValue, promedioMayor = float.MinValue;
+            float promedioAlumno = 0f,sumaAlumno = 0f, promedioGeneral = 0f;
+            //coloco la opcion = 1, para que pase la 1ºvez al ciclo.
+            int opcion=1;
+            while(opcion!=0)
+            {
+                Console.WriteLine("Ingrese el legajo del Alumno");
+                nombreAlumno= Console.ReadLine();
+                for(int j = 1; j<=3; j++)
+                {
+                    // ingreso las 3 notas del alumno
+                    Console.WriteLine("\nIngrese la nota nº {0} del alumno {1}", j,nombreAlumno.ToUpper());
+                    notaAlumno = int.Parse(Console.ReadLine());
+                    // Aca sumo las notas para despues sacar el promedio
+                    sumaNota = sumaNota + notaAlumno;
+                }
+                //Despues de tener las 3 notas saco el promedio
+                // Muestro el promedio del alumno
+                promedioAlumno = ((float)sumaNota / 3);
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine("El promedio del alumno {0} es: {1}",nombreAlumno.ToUpper() ,promedioAlumno);
+                Console.WriteLine("\nPresione una tecla para continuar");
+                Console.ReadKey();
+               
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                // Ahora tengo que ir guardando el mayor y menor promedio
+                if (promedioAlumno > promedioMayor)
+                {
+                    promedioMayor = promedioAlumno;
+                    nombrePromedioMayor = nombreAlumno;
+                }
+                if (promedioAlumno < promedioMenor)
+                {
+                    promedioMenor = promedioAlumno;
+                    nombrePromedioMenor = nombreAlumno;
+                }
+
+                // Tengo que ir guardando las notas para el promedio gral.
+                sumaAlumno += promedioAlumno;
+                //el caso anterior seria la forma comun de acumular valores, como la siguiente
+                //sumaAlumno = sumaAlumno + promedioAlumno;
+
+
+                //Ahora tengo que inicializar todas las variables que use para poder usarlas para otro alumno
+                promedioAlumno = 0;
+                sumaNota = 0;
+                //sumo el alumno al total
+                cantidadAlumno++;
+                Console.WriteLine("\nIngrese 1-Para continuar, 0-Para Salir");
+                opcion = int.Parse(Console.ReadLine());
+            }
+            
+            // Tengo que sacar el promedio gral de todos los alumnos
+            promedioGeneral = (sumaAlumno / cantidadAlumno);
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("_________________________________");
+            Console.WriteLine("El MAYOR promedio es: {0} correspondiente al legajo nro: {1}", promedioMayor,nombrePromedioMayor.ToUpper());
+            Console.WriteLine("_________________________________");
+            Console.WriteLine("El MENOR promedio es: {0} corresponde al legajo nro {1}", promedioMenor,nombrePromedioMenor.ToUpper());
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("_________________________________");
+            Console.WriteLine("\nEl promedio general del alumnado es:{0}", promedioGeneral);
+            Console.WriteLine("_________________________________");
+            Console.WriteLine("Cantidad total de alumnos: {0}",cantidadAlumno);
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine("_________________________________");
+            Console.WriteLine("\nPresione una tecla para finalizar la aplicación");
+            Console.ReadKey();

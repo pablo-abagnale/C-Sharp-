@@ -1,0 +1,70 @@
+string salida,nombre,nombreMayorPar,nombreMayorImpar;
+            salida = "s";
+            nombreMayorPar = "";
+            nombreMayorImpar = "";
+            int edad,cantidadPar,cantidadImpar,edadPar,edadMayorPar,edadImpar,edadMayorImapar;
+            cantidadImpar = 0;
+            cantidadPar = 0;
+            edadPar= 0;
+            edadMayorPar = int.MinValue;
+            edadImpar = 0;
+            edadMayorImapar = int.MinValue;
+            Console.WriteLine("Formación de grupos ");
+           
+            do
+            {
+                //Ingreso de datos
+                Console.WriteLine("Ingrese el nombre del Participante ");
+                nombre = Console.ReadLine();
+                Console.WriteLine("Ingrese la edad  del Participante ");
+                edad = int.Parse(Console.ReadLine());
+
+                //Pares
+                if(edad % 2 == 0)
+                {
+                    cantidadPar = cantidadPar + 1;
+                    edadPar = edad;
+                    if( edadPar > edadMayorPar)
+                    {
+                        edadMayorPar = edadPar;
+                        nombreMayorPar = nombre;
+                    }
+                }
+                //Impares
+                if (edad % 2 != 0 )
+                {
+                    cantidadImpar = cantidadImpar + 1;
+                    edadImpar = edad;
+                    if (edadImpar > edadMayorImapar)
+                    {
+                        edadMayorImapar = edadImpar;
+                        nombreMayorImpar = nombre;
+                    }
+
+                }
+
+                //salida del bucle
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("¿Desea cargar otro Participante? (s/n), Puede usar ENTER para continuar ");
+                salida = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+            } while (salida != "n");
+
+
+            Console.WriteLine("              Grupo Pares             ");
+            Console.WriteLine($" Edad del integrante mayor: {edadMayorPar} Años  ");
+            Console.WriteLine($" Nombre del integrante mayor: {nombreMayorPar}     ");
+            Console.WriteLine($" Cantidad de integrantes: {cantidadPar}         ");
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("              Grupo Impares             ");
+            Console.WriteLine($" Edad del integrante mayor: {edadMayorImapar} Años  ");
+            Console.WriteLine($" Nombre del integrante mayor: {nombreMayorImpar}     ");
+            Console.WriteLine($" Cantidad de integrantes: {cantidadImpar}         ");
+            Console.WriteLine("--------------------------------------");
+
+
+            //Cierre de consola 
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\n Para detener el programa presione ENTER");
+            Console.ReadKey();

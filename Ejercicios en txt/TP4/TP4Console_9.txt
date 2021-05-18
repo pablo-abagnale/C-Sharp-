@@ -1,0 +1,38 @@
+/*EJERCICIO NÚMERO 9
+             Ingresar una determinada cantidad de números que se pide por pantalla contar la cantidad de números primos
+             y no primos que se encontrarone informar ambos por pantalla*/
+
+            float numIngresado, resto;
+            int i, vuelta,contadorPrimo,contadorNoPrimo;
+            resto = 0;
+            vuelta = 1;
+            contadorPrimo = 0;
+            contadorNoPrimo = 0;
+            Console.WriteLine("Este programa es para determinar cuantos de los numeros ingresados son primos y cuantos no \n Ingresa un numero");
+            numIngresado = float.Parse(Console.ReadLine());
+            while (vuelta != 0)
+            {
+                if (numIngresado > 1)
+                {
+                    for (i = 1; i <= numIngresado; i++)
+                    {
+                        if (numIngresado % i == 0)
+                        {
+                            resto++;
+                        }
+                    }
+                    if (resto == 2)
+                    {
+                        contadorPrimo++;
+                    }
+                    else
+                    {
+                        contadorNoPrimo++;
+                    }
+
+                }
+                Console.WriteLine("Para continuar cargando ingrese un numero diferente de 0 , para salir precione 0");
+                vuelta = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine($"De los numeros ingresados {contadorPrimo} son primos y {contadorNoPrimo} no son primos"); 
+            Console.ReadKey();
